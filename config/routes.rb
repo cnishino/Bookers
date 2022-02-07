@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'books' => 'book#index',as: 'index'
-  post 'books' => 'book#create'
-  get 'books/:id' => 'book#show', as: 'book'
-  get 'books/:id/edit' => 'book#edit', as: 'edit_book'
+  resources :books
+  # get 'books' => 'books#index',as: 'index'
+  # post 'books' => 'books#create'
+  # get 'books/:id' => 'books#show', as: 'book'
+  # get 'books/:id/edit' => 'books#edit', as: 'edit_book'
   get root :to => 'homes#top'
-  patch 'books/:id' => 'book#update', as: 'update_book'
-  delete 'books/:id' => 'book#destroy', as: 'destroy_book'
+  # patch 'books/:id' => 'books#update', as: 'update_book'
+  # delete 'books/:id' => 'books#destroy', as: 'destroy_book'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
